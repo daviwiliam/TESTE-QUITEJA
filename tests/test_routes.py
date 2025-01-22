@@ -11,11 +11,11 @@ def client():
 
 # Testa a rota '/tipo/1' para garantir que retorna o tipo correto
 def test_get_tipo(client, mocker) -> None:
-    mocker.patch('app.services.get_tipo_by_id', return_value=({"id": 1, "nome": "Exemplo"}, 200))
+    mocker.patch('app.services.get_tipo_by_id', return_value=({"id": 1, "nome": "Elefante"}, 200))
 
     response = client.get('/tipo/1')
     assert response.status_code == 200
-    assert response.json == {'id': 1, 'nome': 'Exemplo'}
+    assert response.json == {'id': 1, 'nome': 'Elefante'}
 
 # Testa a rota '/tipo/999' para garantir que retorna um erro quando o tipo não é encontrado
 def test_get_tipo_not_found(client, mocker) -> None:
