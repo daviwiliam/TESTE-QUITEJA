@@ -40,8 +40,8 @@ project_root/
 
 1. **Clone o repositório:**
    ```bash
-   git clone <https://github.com/daviwiliam/TESTE-QUITEJA>
-   cd project_root
+   git clone https://github.com/daviwiliam/TESTE-QUITEJA
+   cd TESTE-QUITEJA
    ```
 
 2. **Crie e ative um ambiente virtual:**
