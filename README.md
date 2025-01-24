@@ -62,12 +62,7 @@ project_root/
    ```bash
    pip install -r requirements.txt
    ```
-
-4. **Execute os testes para garantir que o ambiente esteja funcionando corretamente:**
-   ```bash
-   pytest
-   ```
-
+   
 ## Uso
 
 ### Processar os Dados
@@ -108,6 +103,13 @@ project_root/
   }
   ```
   **Código de status**: 404
+
+## TESTE
+
+ **Execute os testes para garantir que o ambiente esteja funcionando corretamente:**
+   ```bash
+   pytest
+   ```
 
 ## Estrutura do Código
 
