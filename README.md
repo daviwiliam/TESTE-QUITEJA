@@ -72,7 +72,7 @@ project_root/
 
 2. **Execute o script de processamento de dados:**
    ```bash
-   python scripts/process_data.py
+   python -m scripts.process_data
    ```
    Esse comando irá processar os dados e gerar um arquivo SQL com os dados filtrados e uma consulta de agrupamento.
 
