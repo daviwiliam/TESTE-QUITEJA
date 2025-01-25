@@ -54,7 +54,7 @@ project_root/
    Para Windows:
    ```bash
    python -m venv venv
-   venv/Scripts/activate
+   venv\Scripts\activate
    ```
 
 3. **Instale as dependências:**
