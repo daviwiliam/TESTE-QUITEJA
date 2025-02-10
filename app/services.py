@@ -16,12 +16,21 @@ def get_tipo_by_id(tipo_id: int) -> Union[Tuple[Dict[str, Union[int, str]], int]
 
 # Função para salvar os dados de um DataFrame em um arquivo SQL
 def save_to_sql_file(dataframe: pd.DataFrame, file_path: str) -> None:
-
     with open(file_path, 'w') as sql_file:
-        for _, row in dataframe.iterrows():
-            sql = f"INSERT INTO dados_finais ({', '.join(dataframe.columns)}) VALUES ({', '.join(map(repr, row.values))});\n"
-            sql_file.write(sql)
+        
+        values = []
+        
+        for i, (_, row) in enumerate(dataframe.iterrows(), start=1):
+            values.append(f"({', '.join(map(repr, row.values))})")
 
+            if i % 10 == 0:
+                sql = f"INSERT INTO dados_finais ({', '.join(dataframe.columns)}) VALUES\n" + ",\n".join(values) + ";\n"
+                sql_file.write(sql)
+                values = []
+
+        if values:
+            sql = f"INSERT INTO dados_finais ({', '.join(dataframe.columns)}) VALUES\n" + ",\n".join(values) + ";\n"
+            sql_file.write(sql)
 
 # Função para gerar a query SQL para agrupar dados por data e nome do tipo
 def generate_group_query() -> str:
